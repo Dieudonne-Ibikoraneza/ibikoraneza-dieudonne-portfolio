@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+  <style>
+    text {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 36px;
+      fill: #00BFFF;
+    }
+  </style>
+  <text x="10" y="45">&lt;/&gt;</text>
+</svg>
