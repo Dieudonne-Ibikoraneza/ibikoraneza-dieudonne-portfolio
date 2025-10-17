@@ -23,7 +23,7 @@ const Index = () => {
     <div className="relative min-h-screen bg-opacity-[0.15] bg-white font-['Jetbrains_Mono'] overflow-hidden">
       <StarField />
       <Navigation />
-      <FloatingDock />
+      <FloatingDock show={false} />
       <main>
         <Hero />
         <TechStack />
