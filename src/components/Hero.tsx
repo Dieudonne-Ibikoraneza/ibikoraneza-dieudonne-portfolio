@@ -257,6 +257,12 @@ export const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-background transition-all duration-300"
+                onClick={() => {
+                  window.open(
+                    "https://drive.google.com/file/d/1Gqm--sKnGwytdE6X-RxluXN-40YueQ3I/view?usp=sharing",
+                    "_blank"
+                  );
+                }}
               >
                 <DownloadIcon className="mr-2 h-4 w-4" />
                 Download CV
