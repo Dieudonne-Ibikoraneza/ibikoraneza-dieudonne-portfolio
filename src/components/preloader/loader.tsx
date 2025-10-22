@@ -19,7 +19,7 @@ const steps = [
 ];
 
 export default function Index() {
-  const { isLoading, loadingPercent } = usePreloader();
+  const { loadingPercent } = usePreloader();
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -28,13 +28,11 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
-    if (index == steps.length - 1) return;
-    setTimeout(
-      () => {
-        setIndex(index + 1);
-      },
-      index == 0 ? 1000 : 150
-    );
+    if (index === steps.length - 1) return;
+    const timeout = setTimeout(() => {
+      setIndex((prev) => prev + 1);
+    }, index === 0 ? 1000 : 150);
+    return () => clearTimeout(timeout);
   }, [index]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
@@ -42,6 +40,7 @@ export default function Index() {
   } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
     dimension.height
   }  L0 0`;
+
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
   } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
@@ -49,11 +48,18 @@ export default function Index() {
   const curve = {
     initial: {
       d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+      transition: {
+        duration: 0.7,
+        ease: [0.76, 0, 0.24, 1] as [number, number, number, number],  // Fixed easing
+      },
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+      transition: {
+        duration: 0.7,
+        ease: [0.76, 0, 0.24, 1] as [number, number, number, number], // Fixed easing
+        delay: 0.3,
+      },
     },
   };
 
@@ -74,7 +80,7 @@ export default function Index() {
               variants={curve}
               initial="initial"
               exit="exit"
-            ></motion.path>
+            />
           </svg>
         </>
       )}

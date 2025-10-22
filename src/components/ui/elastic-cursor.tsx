@@ -3,7 +3,7 @@
  */
 
 "use client";
-import React, {
+import {
   useCallback,
   useEffect,
   useLayoutEffect,
