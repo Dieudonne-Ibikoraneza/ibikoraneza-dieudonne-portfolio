@@ -163,7 +163,7 @@ export const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary text-background hover:bg-primary/90 transition-colors text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary cursor-can-hover text-background hover:bg-primary/90 transition-colors text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 size="lg"
               >
                 {isSubmitting ? (
@@ -193,7 +193,7 @@ export const Contact = () => {
                   </h3>
                   <a
                     href="mailto:dieudonneibikoraneza13@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base"
+                    className="text-muted-foreground cursor-can-hover hover:text-primary transition-colors text-sm sm:text-base"
                   >
                     dieudonneibikoraneza13@gmail.com
                   </a>

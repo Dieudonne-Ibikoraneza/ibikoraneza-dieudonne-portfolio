@@ -53,7 +53,7 @@ export const Navigation = () => {
           <div className="flex items-center justify-between">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-xl font-bold font-mono hover:text-primary transition-colors"
+              className="text-xl cursor-can-hover font-bold font-mono hover:text-primary transition-colors"
             >
               {"<"}
               <span className="text-primary">/</span>
@@ -67,7 +67,7 @@ export const Navigation = () => {
                   onClick={() =>
                     scrollToSection(item.toLowerCase().replace(" ", "-"))
                   }
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                  className="cursor-can-hover text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
                 >
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />

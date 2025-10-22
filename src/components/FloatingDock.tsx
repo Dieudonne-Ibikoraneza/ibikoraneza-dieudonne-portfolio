@@ -59,7 +59,7 @@ export const FloatingDock = ({ show }: FloatingDockProps) => {
                 className="group relative p-3 rounded-xl hover:bg-primary/10 transition-all duration-300"
                 aria-label={item.label}
               >
-                <Icon className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+                <Icon className="h-5 w-5 cursor-can-hover text-muted-foreground group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-background px-3 py-1 rounded-lg text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                   {item.label}
                 </span>

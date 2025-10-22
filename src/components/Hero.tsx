@@ -1,12 +1,10 @@
 import { Play, Pause } from "lucide-react";
-import { DownloadIcon } from "./ui/DownloadIcon";
-import { GithubIcon } from "./ui/GithubIcon";
-import { LinkedInIcon } from "./ui/LinkedinIcon";
-import { MailIcon } from "./ui/MailIcon";
+import { Github, Download, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { useState, useEffect } from "react";
 import Aos from "aos";
+import ScrollDownIcon from "./scroll-down-icon";
 
 const codeSnippets = {
   Frontend: `// Portfolio Contact Form
@@ -91,20 +89,9 @@ export const Hero = () => {
     "typing"
   );
   const [animatingText, setAnimatingText] = useState<string | null>(null);
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
   useEffect(() => {
     Aos.refresh();
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setShowScrollIndicator(scrollPosition < 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -252,11 +239,37 @@ export const Hero = () => {
               </span>
             </p>
 
+            {/*
+            <div className="flex items-center gap-3">
+  
+    href="https://github.com/Dieudonne-Ibikoraneza"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cursor-can-hover p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
+  >
+    <GithubIcon className="w-5 h-5 text-primary" />
+  </a>
+  
+    href="https://linkedin.com/in/dieudonne-ibikoraneza-2b4b9820b"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cursor-can-hover p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
+  >
+    <LinkedInIcon className="h-5 w-5 text-primary" />
+  </a>
+  
+    href="mailto:dieudonneibikoraneza13@gmail.com"
+    className="cursor-can-hover p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
+  >
+    <MailIcon className="h-5 w-5 text-primary" />
+  </a>
+</div> */}
+
             <div className="flex flex-wrap items-center gap-4">
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-background transition-all duration-300"
+                className="cursor-can-hover border-primary text-primary hover:bg-primary hover:text-background transition-all duration-300"
                 onClick={() => {
                   window.open(
                     "https://drive.google.com/file/d/1Gqm--sKnGwytdE6X-RxluXN-40YueQ3I/view?usp=sharing",
@@ -264,7 +277,7 @@ export const Hero = () => {
                   );
                 }}
               >
-                <DownloadIcon className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-4 w-4" />
                 Download CV
               </Button>
 
@@ -273,23 +286,23 @@ export const Hero = () => {
                   href="https://github.com/Dieudonne-Ibikoraneza"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
+                  className="cursor-can-hover p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
                 >
-                  <GithubIcon className="w-5 h-5 text-primary" />
+                  <Github className="w-5 h-5 text-primary" />
                 </a>
                 <a
                   href="https://linkedin.com/in/dieudonne-ibikoraneza-2b4b9820b"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
+                  className="p-2 rounded-lg border cursor-can-hover border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
                 >
-                  <LinkedInIcon className="h-5 w-5 text-primary" />
+                  <Linkedin className="h-5 w-5 text-primary" />
                 </a>
                 <a
                   href="mailto:dieudonneibikoraneza13@gmail.com"
-                  className="p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
+                  className="cursor-can-hover p-2 rounded-lg border border-border cursor-can-hover hover:border-primary hover:text-primary transition-all duration-300 items-center justify-center flex"
                 >
-                  <MailIcon className="h-5 w-5 text-primary" />
+                  <Mail className="h-5 w-5 text-primary" />
                 </a>
               </div>
             </div>
@@ -297,7 +310,7 @@ export const Hero = () => {
 
           {/* Right side - Code editor preview */}
           <div
-            className="hidden lg:block animate-fade-out group"
+            className="lg:block animate-fade-out group"
             style={{ animationDelay: "0.2s" }}
             data-aos="fade-left"
             data-aos-delay="300"
@@ -322,7 +335,7 @@ export const Hero = () => {
                 <div className="flex-1" />
                 <button
                   onClick={togglePlayPause}
-                  className="p-1.5 rounded hover:bg-secondary/80 transition-colors"
+                  className="p-1.5 rounded cursor-can-hover hover:bg-secondary/80 transition-colors"
                   aria-label={isPlaying ? "Pause animation" : "Play animation"}
                 >
                   {isPlaying ? (
@@ -344,7 +357,7 @@ export const Hero = () => {
                     <TabsTrigger
                       key={tab}
                       value={tab}
-                      className="px-4 py-2 text-sm font-mono rounded-none data-[state=active]:bg-card data-[state=active]:text-primary data-[state=active]:border-t-2 data-[state=active]:border-primary data-[state=inactive]:text-muted-foreground"
+                      className="px-4 py-2 cursor-can-hover text-sm font-mono rounded-none data-[state=active]:bg-card data-[state=active]:text-primary data-[state=active]:border-t-2 data-[state=active]:border-primary data-[state=inactive]:text-muted-foreground"
                     >
                       {tab}
                     </TabsTrigger>
@@ -368,18 +381,12 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator - fixed positioning */}
-        <button
+        <div
           onClick={() => scrollToSection("tech-stack")}
-          className={`absolute top-10 left-1/2 ${
-            showScrollIndicator ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+          className="absolute bottom-10 right-6 lg:translate-x-[50%]"
         >
-          <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center group-hover:border-primary/80 transition-colors relative">
-            <div className="w-1 h-2 bg-primary rounded-full absolute top-2 animate-scroll-indicator group-hover:bg-primary/80 transition-colors" />
-          </div>
-        </button>
+          <ScrollDownIcon />
+        </div>
       </div>
     </section>
   );

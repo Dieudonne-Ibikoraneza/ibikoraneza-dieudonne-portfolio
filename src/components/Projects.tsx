@@ -2,7 +2,6 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import { GithubIcon } from "./ui/GithubIcon";
 
 import {
   SiReact,
@@ -61,7 +60,7 @@ const projects = [
       "https://github.com/Dieudonne-Ibikoraneza/ibikoraneza-dieudone-blog",
   },
   {
-    title: "Task Management App",
+    title: "Note Taking Platform",
     techStack: ["Frontend,", "Convex"],
     description:
       "A modern note-taking application built with Next.js and Convex, featuring real-time collaboration, markdown support, and seamless GitHub authentication.",
@@ -130,8 +129,9 @@ const projects = [
       "https://res.cloudinary.com/dv610czy9/image/upload/v1760719514/Screenshot_From_2025-10-17_18-44-52_fy0rac.png",
       "https://res.cloudinary.com/dv610czy9/image/upload/v1760719638/Screenshot_From_2025-10-17_18-46-13_ze3jhu.png",
     ],
-    demoLink: "#",
-    githubLink: "#",
+    demoLink: "https://ibikoraneza-dieudonne-portfolio.vercel.app",
+    githubLink:
+      "https://www.github.com/Dieudonne-Ibikoraneza/ibikoraneza-dieudonne-portfolio",
   },
 ];
 
@@ -255,7 +255,7 @@ export const Projects = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex-1 border-primary text-primary hover:bg-primary hover:text-background"
+                    className="flex-1 border-primary cursor-can-hover text-primary hover:bg-primary hover:text-background"
                     asChild
                   >
                     <a
@@ -270,7 +270,7 @@ export const Projects = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex-1"
+                    className="flex-1 cursor-can-hover"
                     asChild
                   >
                     <a
@@ -296,9 +296,9 @@ export const Projects = () => {
             href="https://github.com/Dieudonne-Ibikoraneza"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary p-3 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/30"
+            className="bg-primary cursor-can-hover p-3 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/30"
           >
-            <GithubIcon className="w-6 h-6 text-background" />
+            <Github className="w-6 h-6 text-background" />
           </a>
         </div>
 
