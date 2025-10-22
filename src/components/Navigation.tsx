@@ -61,7 +61,7 @@ export const Navigation = () => {
             </button>
 
             <div className="hidden md:flex items-center gap-8">
-              {["About", "Tech Stack", "Projects", "Contact"].map((item) => (
+              {["Tech Stack", "Projects", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() =>
